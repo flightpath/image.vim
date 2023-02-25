@@ -1,7 +1,7 @@
 command! -nargs=0 Image call DisplayImage()
 
-if !has("python")
-    echo "image.vim requires python support"
+if !has("python3")
+    echo "image.vim requires python3 support"
     finish
 endif
 
@@ -63,7 +63,7 @@ def getAsciiImage(imageFile, maxWidth, maxHeight):
         vim.current.buffer.append(asciiImage)
 
     return asciiImage
-    
+
 vim.command("let imagefile = expand('%:p')")
 imagefile = vim.eval("imagefile")
 
